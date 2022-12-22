@@ -1,106 +1,79 @@
-﻿@{
+@{
     ViewData["Title"] = "Home Page";
 }
-<!-- ======= Hero Section ======= -->
-  <section id="hero">
+@using Astro4.Models;
+@model List<Burc>
+
+
+<section id="hero">
     <div id="heroCarousel" data-bs-interval="5000" class="carousel slide carousel-fade" data-bs-ride="carousel">
 
-      <div class="carousel-inner" role="listbox">
+        <div class="carousel-inner" role="listbox">
 
-        <!-- Slide 1 -->
-        <div class="carousel-item active" style="background-image: url(assets/img/slide/slide-1.jpg);">
-          <div class="carousel-container">
-            <div class="carousel-content animate__animated animate__fadeInUp">
-              <h2>Welcome to <span>Flattern</span></h2>
-              <p>Ut velit est quam dolor ad a aliquid qui aliquid. Sequi ea ut et est quaerat sequi nihil ut aliquam. Occaecati alias dolorem mollitia ut. Similique ea voluptatem. Esse doloremque accusamus repellendus deleniti vel. Minus et tempore modi architecto.</p>
-              <div class="text-center"><a href="" class="btn-get-started">Read More</a></div>
+            <!-- Slide 1 -->
+            <div class="carousel-item active" style="background-image: url('https://media.istockphoto.com/id/1417193727/photo/astrological-zodiac-signs-inside-of-horoscope-circle-astrology-knowledge-of-stars-in-the-sky.jpg?b=1&s=170667a&w=0&k=20&c=26xz3OhRSdR-pARB9ydGMaqFA5YSAIK2L3QRp88EiSI=');">
+                <div class="carousel-container">
+                    <div class="carousel-content animate__animated animate__fadeInUp">
+                        <h2><span>AstoroGo </span></h2>
+                        <p></p>
+                        <div class="text-center"><a href="" class="btn-get-started">Daha Fazlası İçin Tıkla</a></div>
+                    </div>
+                </div>
             </div>
-          </div>
+
+            <!-- Slide 2 -->
+            <div class="carousel-item" style="background-image: url('https://wallpaperaccess.com/full/1291888.jpg');">
+                <div class="carousel-container">
+                    <div class="carousel-content animate__animated animate__fadeInUp">
+                        <h2>Ruh Eşin Kim?</h2>
+                        <p>Hayatınıza giren kişi, doğru kişi mi? Beyaz atlı prens, ruh eşi ya da ruh ikizi dedikleri kişiyi, gördüğünüz an hemen hisseder misiniz, yoksa bunu anlamanın bir yolu var mı? İşte milyonlarca kişi içinden ‘o’ kişiyi anlamanız için işaretler...</p>
+                        <div class="text-center"><a href="" class="btn-get-started">Daha Fazlası İçin Tıkla</a></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 3 -->
+            <div class="carousel-item" style="background-image: url('http://www.primeakademi.com/resim.php?p=data/icerik/pQ4mLdJy82jEYvr6.jpeg');">
+                <div class="carousel-container">
+                    <div class="carousel-content animate__animated animate__fadeInUp">
+                        <h2>Retro Nedir?</h2>
+                        <p>Retro, gezegenlerin geri hareket edişi anlamında kullanılır. Modern astrolojide, geçmiş istatistiklerin de ışığı altında, Retroların önemi büyüktür.</p>
+                        <div class="text-center"><a class="nav-link text-light" asp-area="" asp-controller="Retro" asp-action="Index">Daha Fazlası İçin Tıkla</a></div>
+                    </div>
+                </div>
+            </div>
+
         </div>
 
-        <!-- Slide 2 -->
-        <div class="carousel-item" style="background-image: url(assets/img/slide/slide-2.jpg);">
-          <div class="carousel-container">
-            <div class="carousel-content animate__animated animate__fadeInUp">
-              <h2>Lorem Ipsum Dolor</h2>
-              <p>Ut velit est quam dolor ad a aliquid qui aliquid. Sequi ea ut et est quaerat sequi nihil ut aliquam. Occaecati alias dolorem mollitia ut. Similique ea voluptatem. Esse doloremque accusamus repellendus deleniti vel. Minus et tempore modi architecto.</p>
-              <div class="text-center"><a href="" class="btn-get-started">Read More</a></div>
-            </div>
-          </div>
-        </div>
+        <a class="carousel-control-prev" href="#heroCarousel" role="button" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon bx bx-left-arrow" aria-hidden="true"></span>
+        </a>
 
-        <!-- Slide 3 -->
-        <div class="carousel-item" style="background-image: url(assets/img/slide/slide-3.jpg);">
-          <div class="carousel-container">
-            <div class="carousel-content animate__animated animate__fadeInUp">
-              <h2>Sequi ea ut et est quaerat</h2>
-              <p>Ut velit est quam dolor ad a aliquid qui aliquid. Sequi ea ut et est quaerat sequi nihil ut aliquam. Occaecati alias dolorem mollitia ut. Similique ea voluptatem. Esse doloremque accusamus repellendus deleniti vel. Minus et tempore modi architecto.</p>
-              <div class="text-center"><a href="" class="btn-get-started">Read More</a></div>
-            </div>
-          </div>
-        </div>
+        <a class="carousel-control-next" href="#heroCarousel" role="button" data-bs-slide="next">
+            <span class="carousel-control-next-icon bx bx-right-arrow" aria-hidden="true"></span>
+        </a>
 
-      </div>
-
-      <a class="carousel-control-prev" href="#heroCarousel" role="button" data-bs-slide="prev">
-        <span class="carousel-control-prev-icon bx bx-left-arrow" aria-hidden="true"></span>
-      </a>
-
-      <a class="carousel-control-next" href="#heroCarousel" role="button" data-bs-slide="next">
-        <span class="carousel-control-next-icon bx bx-right-arrow" aria-hidden="true"></span>
-      </a>
-
-      <ol class="carousel-indicators" id="hero-carousel-indicators"></ol>
+        <ol class="carousel-indicators" id="hero-carousel-indicators"></ol>
 
     </div>
-  </section><!-- End Hero -->
-  <section id="services" class="services">
-      <div class="container">
+
+
+</section>
+<section id="services" class="services">
+    <div class="container">
 
         <div class="row">
-          <div class="col-lg-4 col-md-6">
-            <div class="icon-box" data-aos="fade-up">
-              <div class="icon"><i class="bi bi-briefcase"></i></div>
-              <h4 class="title"><a href="">Lorem Ipsum</a></h4>
-              <p class="description">Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident</p>
-            </div>
-          </div>
-          <div class="col-lg-4 col-md-6">
-            <div class="icon-box" data-aos="fade-up" data-aos-delay="100">
-              <div class="icon"><i class="bi bi-card-checklist"></i></div>
-              <h4 class="title"><a href="">Dolor Sitema</a></h4>
-              <p class="description">Minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat tarad limino ata</p>
-            </div>
-          </div>
-          <div class="col-lg-4 col-md-6">
-            <div class="icon-box" data-aos="fade-up" data-aos-delay="200">
-              <div class="icon"><i class="bi bi-bar-chart"></i></div>
-              <h4 class="title"><a href="">Sed ut perspiciatis</a></h4>
-              <p class="description">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur</p>
-            </div>
-          </div>
-          <div class="col-lg-4 col-md-6">
-            <div class="icon-box" data-aos="fade-up" data-aos-delay="200">
-              <div class="icon"><i class="bi bi-binoculars"></i></div>
-              <h4 class="title"><a href="">Magni Dolores</a></h4>
-              <p class="description">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
-            </div>
-          </div>
-          <div class="col-lg-4 col-md-6">
-            <div class="icon-box" data-aos="fade-up" data-aos-delay="300">
-              <div class="icon"><i class="bi bi-brightness-high"></i></div>
-              <h4 class="title"><a href="">Nemo Enim</a></h4>
-              <p class="description">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque</p>
-            </div>
-          </div>
-          <div class="col-lg-4 col-md-6">
-            <div class="icon-box" data-aos="fade-up" data-aos-delay="400">
-              <div class="icon"><i class="bi bi-calendar4-week"></i></div>
-              <h4 class="title"><a href="">Eiusmod Tempor</a></h4>
-              <p class="description">Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi</p>
-            </div>
-          </div>
-        </div>
+            @foreach (var item in Model)
+            {
+                <div class="col-lg-4 col-md-6">
+                    <div class="icon-box" data-aos="fade-up">
+                        <div class="icon"><img src="~/lib/Resimler/@item.burc_resim" height="45" width="45" /></div>
+                        <h4 class="title"><a href="">@item.burc_adi</a></h4>
+                        <p class="description">@item.ozellik</p>
+                    </div>
+                </div>
+            }
 
-      </div>
-    </section><!-- End Services Section -->
+        </div>
+    </div>
+</section>
