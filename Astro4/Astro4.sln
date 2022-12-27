@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.33205.214
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Astro4", "Astro4.csproj", "{CE367AF7-C7C8-4E31-8949-FE449B80314A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CE367AF7-C7C8-4E31-8949-FE449B80314A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CE367AF7-C7C8-4E31-8949-FE449B80314A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CE367AF7-C7C8-4E31-8949-FE449B80314A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CE367AF7-C7C8-4E31-8949-FE449B80314A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {73D6A5CD-D3DC-4F1D-866D-6656A308B5FF}
+	EndGlobalSection
+EndGlobal
