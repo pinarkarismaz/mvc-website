@@ -11,5 +11,6 @@ namespace Astro4.Data
         {
         }
         public DbSet<Astro4.Models.Burc> Burc { get; set; }
+        public DbSet<Astro4.Models.Gezegen> Gezegen { get; set; }
     }
 }
