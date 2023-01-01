@@ -1,4 +1,35 @@
-﻿
+﻿@using Microsoft.AspNetCore.Builder
+@using Microsoft.AspNetCore.Localization
+@using Microsoft.Extensions.Options
+@using Microsoft.AspNetCore.Mvc.Localization
+
+@inject IViewLocalizer Localizer
+@inject IOptions<RequestLocalizationOptions> LocOptions
+
+@{
+    var requestCulture = Context.Features.Get<IRequestCultureFeature>();
+    var cultureItems = LocOptions.Value.SupportedUICultures
+        .Select(c => new SelectListItem { Value = c.Name, Text = c.DisplayName })
+        .ToList();
+}
+
+
+
+<label>Language:</label>
+<select onchange="SetCulture(this.value)" asp-for="@requestCulture.RequestCulture.UICulture.Name" asp-items="cultureItems">
+</select>
+
+<div asp-validation-summary="All" class="text-danger"></div>
+@{
+    string culture = "", uiculture = "";
+    if (Context.Request.QueryString.HasValue)
+    {
+        string url = Context.Request.QueryString.Value;
+        culture = Context.Request.Query["culture"];
+        uiculture = Context.Request.Query["ui-culture"];
+    }
+}
+
 <section id="hero">
     <div id="heroCarousel" data-bs-interval="5000" class="carousel slide carousel-fade" data-bs-ride="carousel">
 
@@ -56,7 +87,7 @@
     <br />
   <div>
         <ul>
-            <li><h4>1. Koç – Aslan, Yay, Terazi</h4></li>
+            <li><h4>@Localizer["Terazi"]</h4></li>
         <li><img src="https://listelist.com/wp-content/uploads/2020/12/koc%CC%A7.jpg" height="400" width="800" /></li>
         <li>Koç burcu tutkulu kişiliğiyle bilinir. Bir konuda karar verdiklerinde kimse onları durduramaz. Bu nedenle özgürlüğe önem veren burçlarla birlikte olmalıdır. Ateş grubundan Aslan ya da Yay, sizin için harika bir partner olabilir. Astrolog Clarisse Monahan’a göre Koç ve Aslan, harika bir çift olabilir zira her ikisi de istekleri konusunda nettir. Koç ve Yay ise harika bir ekip olabilir. Her iki burç da maceralara atılmaya bayılır. Koç’un zıt burcu olan Terazi ise stres anlarında dengede kalmanıza yardımcı olur. Tam anlamıyla bir ruh eşi!</li>
         </ul>
@@ -96,4 +127,11 @@
         <li>Akrep, keskin bir sezgiye sahiptir. Dolayısıyla ruh eşini bulduğunda bunu hemen fark eder. Bir başka su burcu olan Yengeç, Akrep için harika bir eş olabilir. Zira her ikisi de ilişkilerinde duygusal olarak güvende hissetmek ister. Bu nedenle yavaş ve temkinli hareket eder. Oğlak da iyi bir partner olabilir çünkü dengeli ve istikrarlıdır. Her iki burç da hedeflerine kitlenerek kendilerini geliştirmeye odaklanır. Akrep’in zıt burcu olan Boğa ise cinsel olarak harika bir uyum sunar. Her iki burç da oldukça şehvetlidir. Dolayısıyla tutkulu bir ilişkiye sahip olurlar.</li>
     </ul>
   </div>
-   
+<script>
+    function SetCulture(selectedValue) {
+        alert(selectedValue);
+        var url = window.location.href.split('?')[0];
+        var culture = "?culture=" + selectedValue + "&ui-culture=" + selectedValue;
+        window.location.href = url + culture;
+    }
+</script>
